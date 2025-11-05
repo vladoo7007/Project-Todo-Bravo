@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200">
+  <defs>
+    <style>
+      :root {
+        --bg: #0e1118;
+        --accent-start: #7ef7e6;
+        --accent-end: #1ea690;
+        --text: #d5efe9;
+        --glow: rgba(126,247,230,0.28);
+        --textOpacity: 0.16; 
+        --bg: transparent;
+        --accent-start: #66ffe5;
+        --accent-end: #39c3a9;
+        --text: #a7c7bf;
+        --glow: rgba(102,255,229,0.25);
+        --textOpacity: 0.18;
+      }
+      .bg { fill: var(--bg); }
+      .v-fill { fill: url(#gradV); filter: url(#softGlow); }
+      .text { 
+        fill: var(--text); 
+        filter: url(#softGlowText);
+        letter-spacing: 12px;
+        text-anchor: middle;
+        opacity: var(--textOpacity);
+        font-family: "Poppins", "Montserrat", "Segoe UI", "Roboto", sans-serif; 
+        font-weight: 600;
+      }
+    </style>
+    <linearGradient id="gradV" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--accent-start)"/>
+      <stop offset="100%" stop-color="var(--accent-end)"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlowText" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Mask to cut the inner triangle from the V -->
+    <mask id="maskInner">
+      <rect x="0" y="0" width="1000" height="1200" fill="white"/>
+      <!-- inner inverted triangle hole -->
+      <polygon points="500,520 560,380 440,380" fill="black"/>
+    </mask>
+  </defs>
+  
+  <!-- Background (optional via CSS var) -->
+  <rect class="bg" x="0" y="0" width="1000" height="1200"/>
+  
+  <!-- Stylized V (two arms) with inner notch -->
+  <g mask="url(#maskInner)">
+    <!-- Left arm of V -->
+    <polygon class="v-fill" points="300,300 420,300 535,720 415,720"/>
+    <!-- Right arm of V -->
+    <polygon class="v-fill" points="700,300 580,300 465,720 585,720"/>
+  </g>
+  
+  <!-- Title text -->
+  <text class="text" x="500" y="980" font-size="88">TODOBRAVOV</text>
+</svg>
