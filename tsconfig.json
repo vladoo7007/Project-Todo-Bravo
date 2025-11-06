@@ -2,20 +2,14 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "target": "ES2020",
-    "moduleResolution": "node",
+
+    "moduleResolution": "bundler",   // ← ВАЖНО (раньше стояло "node")
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "expo-env.d.ts",
-    ".expo/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "expo-env.d.ts", ".expo/types/**/*.ts"],
+  "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }
