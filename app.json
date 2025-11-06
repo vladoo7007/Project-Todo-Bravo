@@ -17,21 +17,18 @@
       "package": "com.anonymous.ProjectTodoBravo",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "permissions": ["POST_NOTIFICATIONS"]
+    },
 
-      "permissions": ["POST_NOTIFICATIONS"],
-
-      "notification": {
-        "icon": "./assets/images/notification-icon.png",
-        "color": "#111111",
-        "channelId": "default"
-      }
+    "notification": {
+      "icon": "./assets/images/icon.png",
+      "color": "#111111"
     },
 
     "web": {
@@ -60,4 +57,3 @@
     }
   }
 }
-

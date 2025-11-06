@@ -4,16 +4,16 @@ import * as Notifications from "expo-notifications";
 import { SchedulableTriggerInputTypes } from "expo-notifications"; // ✅ enum, lai nebūtu kļūdu ar 'type'
 import React, { useMemo, useState } from "react";
 import {
-  FlatList,
-  Modal,
-  Platform,
-  StyleSheet,
-  Switch,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  useColorScheme,
-  View,
+    FlatList,
+    Modal,
+    Platform,
+    StyleSheet,
+    Switch,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    useColorScheme,
+    View,
 } from "react-native";
 
 // ---------- LATVISKI KOMENTĀRI SĀKAS TE ----------
